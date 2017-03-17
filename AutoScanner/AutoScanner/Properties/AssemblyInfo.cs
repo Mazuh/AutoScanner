@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associada a um assembly.
 [assembly: AssemblyTitle("AutoScanner")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An Windows automation for paper scanner service.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("AutoScanner")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright © Mazuh 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
