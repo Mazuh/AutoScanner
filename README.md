@@ -7,3 +7,5 @@ Register the component by typing “regsvr32 wiaaut.dll”
 That’s it
 
 Follow here for more: http://miljenkobarbir.com/using-a-scanner-without-dialogs-in-net/
+
+In VS Solution Explorer, right-click on the References node and choose Add Reference and find System.Drawing.dll.
