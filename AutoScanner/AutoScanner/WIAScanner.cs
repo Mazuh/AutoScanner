@@ -40,9 +40,11 @@ namespace AutoScanner
         }
 
         /// <summary>
-        /// Use scanner to scan an image (with user selecting the scanner from a dialog).
+        ///     Use scanner to scan an image (with user selecting the scanner from a dialog).
         /// </summary>
-        /// <returns>Scanned images.</returns>
+        /// <returns>
+        ///     Scanned images.
+        /// </returns>
         public static List<Image> Scan()
         {
             WIA.ICommonDialog dialog = new WIA.CommonDialog();
