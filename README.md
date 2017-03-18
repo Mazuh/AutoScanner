@@ -1,6 +1,6 @@
 # AutoScanner
 
-An Windows automation for paper scanner service.
+A Windows automation for paper scanner service.
 
 Made for a post-graduation office -- where I currently work as an intern at university -- scan some documents faster. It's reeeally boring to scan about 30 pages, turning from scanner device to my computer to save the digital document and then repeating the process for all pages.
 
