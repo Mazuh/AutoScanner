@@ -3,12 +3,12 @@
     partial class MainForm
     {
         /// <summary>
-        /// Required designer variable.
+        ///     Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///     Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -22,15 +22,19 @@
 
         #region Windows Form Designer generated code
 
+
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///     Required method for Designer support - do not modify
+        ///     the contents of this method with the code editor.
+        ///     PS: actually, I did modified A LOT of this using
+        ///     code editor, so I'm sorry, Mr. Visual Studio.
         /// </summary>
         private void InitializeComponent()
         {
             this.btnScan = new System.Windows.Forms.Button();
             this.lbDevices = new System.Windows.Forms.ListBox();
-            this.SuspendLayout();// 
+            this.SuspendLayout();
+            // 
             // btnScan
             // 
             this.btnScan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -40,7 +44,7 @@
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(423, 62);
             this.btnScan.TabIndex = 2;
-            this.btnScan.Text = "Scan Images";
+            this.btnScan.Text = "Escanear";
             this.btnScan.UseVisualStyleBackColor = true;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
@@ -62,7 +66,7 @@
             this.Controls.Add(this.lbDevices);
             this.Controls.Add(this.btnScan);
             this.Name = "MainForm";
-            this.Text = "WIA Scanner Test";
+            this.Text = "AutoScanner 1.0 (mazuh@ufrn.edu.br)";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
         }

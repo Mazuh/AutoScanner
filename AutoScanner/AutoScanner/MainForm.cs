@@ -50,6 +50,7 @@ namespace AutoScanner
 
         /// <summary>
         ///     An action for the scan button.
+        ///     Try reach the selected device and save the image in a local file.
         /// </summary>
         private void btnScan_Click(object sender, EventArgs e)
         {
@@ -63,7 +64,7 @@ namespace AutoScanner
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show("Ocorreu um erro ao tentar salvar a imagem: " + exc.Message);
             }
         }
  

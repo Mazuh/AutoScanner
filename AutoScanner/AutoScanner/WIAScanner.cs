@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 
@@ -10,9 +7,14 @@ namespace AutoScanner
 {
     class WIAScanner
     {
+        /* All credit to: http://miljenkobarbir.com/using-a-scanner-without-dialogs-in-net/ */
+
+
         const string wiaFormatBMP = "{B96B3CAB-0728-11D3-9D7B-0000F81EF32E}";
-        const string wiaFormatPNG = "{B96B3CAF-0728-11D3-9D7B-0000F81EF32E}";
-        const string wiaFormatJPG = "{B96B3CAE-0728-11D3-9D7B-0000F81EF32E}";
+        //const string wiaFormatPNG = "{B96B3CAF-0728-11D3-9D7B-0000F81EF32E}";
+        //const string wiaFormatJPG = "{B96B3CAE-0728-11D3-9D7B-0000F81EF32E}";
+
+        
 
         class WIA_DPS_DOCUMENT_HANDLING_SELECT
         {
@@ -24,6 +26,8 @@ namespace AutoScanner
         {
             public const uint FEED_READY = 0x00000001;
         }
+
+
 
         class WIA_PROPERTIES
         {
@@ -39,30 +43,12 @@ namespace AutoScanner
             public const uint WIA_DPS_DOCUMENT_HANDLING_SELECT = WIA_DPS_FIRST + 14;
         }
 
-        /// <summary>
-        ///     Use scanner to scan an image (with user selecting the scanner from a dialog).
-        /// </summary>
-        /// <returns>
-        ///     Scanned images.
-        /// </returns>
-        public static List<Image> Scan()
-        {
-            WIA.ICommonDialog dialog = new WIA.CommonDialog();
-            WIA.Device device = dialog.ShowSelectDevice(WIA.WiaDeviceType.UnspecifiedDeviceType, true, false);
 
-            if (device != null)
-            {
-                return Scan(device.DeviceID);
-            }
-            else
-            {
-                throw new Exception("You must select a device for scanning.");
-            }
-        }
 
         /// <summary>
-        /// Use scanner to scan an image (scanner is selected by its unique id).
+        ///     Use scanner to scan an image (scanner is selected by its unique id).
         /// </summary>
+        /// 
         /// <param name="scannerName"></param>
         /// <returns>Scanned images.</returns>
         public static List<Image> Scan(string scannerId)
@@ -136,7 +122,7 @@ namespace AutoScanner
                         if (prop.PropertyID == WIA_PROPERTIES.WIA_DPS_DOCUMENT_HANDLING_STATUS)
                             documentHandlingStatus = prop;
                     }
-
+                    
                     // assume there are no more pages
                     hasMorePages = false;
 
@@ -155,10 +141,13 @@ namespace AutoScanner
             return images;
         }
 
+
+
         /// <summary>
-        /// Gets the list of available WIA devices.
+        ///     Gets the list of available WIA devices unique ids.
         /// </summary>
-        /// <returns></returns>
+        /// 
+        /// <returns>Available devices IDentifications.</returns>
         public static List<string> GetDevices()
         {
             List<string> devices = new List<string>();
@@ -171,6 +160,7 @@ namespace AutoScanner
 
             return devices;
         }
+
 
     }
 }
