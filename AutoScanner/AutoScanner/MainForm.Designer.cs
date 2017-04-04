@@ -27,7 +27,8 @@
         ///     Required method for Designer support - do not modify
         ///     the contents of this method with the code editor.
         ///     PS: actually, I did modified A LOT of this using
-        ///     code editor, so I'm sorry, Mr. Visual Studio.
+        ///     code editor, so I'm sorry, Mr. Visual Studio ('who' wrote the
+        ///     requirement above).
         /// </summary>
         private void InitializeComponent()
         {
