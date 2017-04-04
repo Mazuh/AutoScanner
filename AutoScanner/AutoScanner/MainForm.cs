@@ -39,7 +39,7 @@ namespace AutoScanner
 
             if (lbDevices.Items.Count == 0)
             {
-                MessageBox.Show("You do not have any WIA devices.");
+                MessageBox.Show("Não foi detectado nenhum dispositivo que suporte scanner por Windows Image Acquisition (WIA).");
                 this.Close();
             }
             else
@@ -59,7 +59,7 @@ namespace AutoScanner
                 List<Image> images = WIAScanner.Scan((string)lbDevices.SelectedItem);
                 foreach (Image image in images)
                 {
-                    image.Save(@"C:\AutoScannerExamples\" + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".jpg", ImageFormat.Jpeg);
+                    image.Save(@"C:\MeusArquivos_AutoScanner\" + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".jpg", ImageFormat.Jpeg);
                 }
             }
             catch (Exception exc)
