@@ -67,7 +67,7 @@
             this.Controls.Add(this.lbDevices);
             this.Controls.Add(this.btnScan);
             this.Name = "MainForm";
-            this.Text = "AutoScanner 1.0 (mazuh@ufrn.edu.br)";
+            this.Text = "AutoScanner 0.1 (mazuh@ufrn.edu.br)";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
         }
