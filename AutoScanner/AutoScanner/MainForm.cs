@@ -11,6 +11,7 @@ namespace AutoScanner
     {
 
         private System.Windows.Forms.Button btnScan;
+        //private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.ListBox lbDevices;
 
         /// <summary>
@@ -50,11 +51,10 @@ namespace AutoScanner
         /// </summary>
         private void btnScan_Click(object sender, EventArgs e)
         {
-            string destinationRootDir = @"C:\MeusArquivos_AutoScanner\";
-            string fullDestinationFileDir = destinationRootDir + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".jpg";
+            string fullDestinationFileDir = Program.DESTINATION_ROOT_DIR + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".jpg";
             try
             {
-                Directory.CreateDirectory(destinationRootDir);
+                Directory.CreateDirectory(Program.DESTINATION_ROOT_DIR);
 
                 List<Image> images = WIAScanner.Scan((string)lbDevices.SelectedItem);
                 foreach (Image image in images)
@@ -64,13 +64,22 @@ namespace AutoScanner
             }
             catch (IOException ioException)
             {
-                MessageBox.Show("Ocorreu um erro ao tentar criar a pasta " + destinationRootDir + " (o programa tem permissões suficientes?): " + ioException.Message);
+                MessageBox.Show("Não conseguiu criar a pasta " + Program.DESTINATION_ROOT_DIR + ": " + ioException.Message);
             }
             catch (Exception genericError)
             {
                 MessageBox.Show("Ocorreu um erro desconhecido ao tentar salvar a imagem: " + genericError.Message);
             }
         }
- 
+        /*
+        /// <summary>
+        ///     An action for the info button.
+        ///     Shows up where the program is saving the scanned images.
+        /// </summary>
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("AutoCleaner está tentando salvar as imagens em: " + Program.DESTINATION_ROOT_DIR);
+        }*/
+
     }
 }

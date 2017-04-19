@@ -33,6 +33,7 @@
         private void InitializeComponent()
         {
             this.btnScan = new System.Windows.Forms.Button();
+            //this.btnInfo = new System.Windows.Forms.Button();
             this.lbDevices = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.Text = "AutoScanner 0.1 (mazuh@ufrn.edu.br)";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+
         }
         
         #endregion

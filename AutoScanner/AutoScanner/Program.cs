@@ -5,6 +5,10 @@ namespace AutoScanner
 {
     class Program
     {
+
+        // root directory folder for saving scanned images
+        public static readonly string DESTINATION_ROOT_DIR = @"C:\MeusArquivos_AutoScanner\";
+
         /// <summary>
         ///     First executed code. Render a Windows.Form.Application.
         /// </summary>
