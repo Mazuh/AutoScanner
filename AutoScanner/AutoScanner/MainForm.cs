@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using System.Drawing.Imaging;
 
 namespace AutoScanner
@@ -54,17 +50,25 @@ namespace AutoScanner
         /// </summary>
         private void btnScan_Click(object sender, EventArgs e)
         {
+            string destinationRootDir = @"C:\MeusArquivos_AutoScanner\";
+            string fullDestinationFileDir = destinationRootDir + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".jpg";
             try
             {
+                Directory.CreateDirectory(destinationRootDir);
+
                 List<Image> images = WIAScanner.Scan((string)lbDevices.SelectedItem);
                 foreach (Image image in images)
                 {
-                    image.Save(@"C:\MeusArquivos_AutoScanner\" + DateTime.Now.ToString("yyyy-MM-dd HHmmss") + ".jpg", ImageFormat.Jpeg);
+                    image.Save(fullDestinationFileDir, ImageFormat.Jpeg);
                 }
             }
-            catch (Exception exc)
+            catch (IOException ioException)
             {
-                MessageBox.Show("Ocorreu um erro ao tentar salvar a imagem: " + exc.Message);
+                MessageBox.Show("Ocorreu um erro ao tentar criar a pasta " + destinationRootDir + " (o programa tem permissões suficientes?): " + ioException.Message);
+            }
+            catch (Exception genericError)
+            {
+                MessageBox.Show("Ocorreu um erro desconhecido ao tentar salvar a imagem: " + genericError.Message);
             }
         }
  
